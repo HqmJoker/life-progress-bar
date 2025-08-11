@@ -386,13 +386,8 @@
   function init(){
     // Theme init
     const saved = getSavedTheme();
-    if(saved){ applyTheme(saved); } else { applyTheme(''); }
+    if(saved){ applyTheme(saved); } else { applyTheme('light'); }
     if(elThemeToggle){ elThemeToggle.addEventListener('click', toggleTheme); }
-    if(!saved && window.matchMedia){
-      const mq = window.matchMedia('(prefers-color-scheme: light)');
-      if(mq.addEventListener){ mq.addEventListener('change', ()=>applyTheme('')); }
-      else if(mq.addListener){ mq.addListener(()=>applyTheme('')); }
-    }
 
     loadSettings();
     updateNow();
