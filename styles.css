@@ -247,9 +247,23 @@ button.secondary{background:transparent;color:var(--muted)}
   .stats-grid{grid-template-columns:1fr}
 }
 @media (max-width: 520px){
-  :root{--grid-cell:10px}
   .advanced-grid{grid-template-columns:1fr}
+  .life-grid{ grid-template-columns: repeat(auto-fill, var(--grid-cell)); }
 } 
+
+@media (max-width: 1024px){
+  .container{ padding:20px }
+  .life-grid{ grid-template-columns: repeat(auto-fill, var(--grid-cell)); }
+  .legend{ gap:10px }
+}
+
+@media (max-width: 768px){
+  .now-grid{ grid-template-columns:1fr }
+  .advanced-grid{ grid-template-columns:repeat(2, 1fr) }
+  .stats-grid{ grid-template-columns:1fr }
+  .life-grid{ grid-template-columns: repeat(auto-fill, var(--grid-cell)); }
+  .alloc-wrap{ gap:12px }
+}
 
 /* === Overrides for centered layout and inline fields === */
 .card h2{ text-align:center }
